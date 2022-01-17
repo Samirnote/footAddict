@@ -3,9 +3,21 @@
 <ul>
   {{#each mangas}}
     <li>
-          {{ this.name }} by {{this.category}} {{this.episodeNumber}}
+          {{ this.name }} 
+          <br>
+          {{this.category}} 
+          <br>
+          {{this.episodeNumber}}
+          <br>
           <img src="{{this.cover}}" alt="{{this.name}}">
+          <br>
           <a href="/mangas/{{this._id}}">Read more</a>
+          <a href="/delete/{{this._id}}">
+                Delete
+            </a>
+            <a href="/update/{{this._id}}">
+                Update
+            </a>
       </li>
   {{/each}}
 </ul>

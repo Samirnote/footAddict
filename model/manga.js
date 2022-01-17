@@ -7,7 +7,8 @@ const mangaSchema = new Schema({
 	category :  ['Kodomo 子供', 'Shōnen 少年', 'Shōjo 少女', 'Seinen 青年', 'Josei 女性', 'Seijin 成人', 'Yaoi やおい', 'Yuri 百合' ],
     episodeNumber : Number,
     author: { type: Schema.Types.ObjectId, ref: "User" },
-    cover : String
+    cover : String,
+    description : String, 
 });
 
 const MangaModel = mongoose.model("mangas", mangaSchema);

@@ -1,4 +1,4 @@
-<form action="/manga-create" method="POST">
+<form action="/manga-create" method="POST" enctype="multipart/form-data">
 
 <!---    in the post route populate the user creator is the actual user logged in => retrieve it from the session   --->
 
@@ -23,6 +23,9 @@
 	<label for="cover">Cover :</label><!--- would be an upload file field ? multiform attribute to the form and cloudinary installation  --->
 	<input type="text" id="cover" name="cover" />
 
-	<button>Register a new manga episode</button>
+	<label for="description">Description :</label><!--- would be an upload file field ? multiform attribute to the form and cloudinary installation  --->
+	<input type="text" id="description" name="description" />
+
+	<button>Add</button>
 
 </form>

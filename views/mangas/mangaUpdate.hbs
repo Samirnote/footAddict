@@ -1,0 +1,29 @@
+<form action="/update/{{manga._id}}" method="post">
+
+    <label for="name">the name : </label>
+    <input type="text" name="name" id="name" value="{{manga.name}}" required>
+
+    
+    <select name="category" id="category" value="{{manga.category}}">
+		<option value="Kodomo">Kodomo 子供</option>
+		<option value="Shōnen">Shōnen 少年</option>
+		<option value="Shōjo">Shōjo 少女</option>
+        <option value="Seinen">Seinen 青年</option>
+        <option value="Josei">Josei 女性</option>
+        <option value="Seijin">Seijin 成人</option>
+        <option value="Yaoi">Yaoi やおい</option>
+        <option value="Yuri">Yuri 百合</option>
+	</select>
+
+    <label for="episodeNumber">Episode number :</label>
+	<input type="number" id="episodeNumber" name="episodeNumber" value="{{manga.episodeNumber}}"/>
+
+    <label for="description">escription : </label>
+    <input type="text" name="description" id="description" value="{{manga.description}}">
+
+    <label for="cover">the picture : </label>
+    <input type="file" name="cover" id="cover" value="{{manga.cover}}">
+    
+    <button>Modify</button>
+
+</form>

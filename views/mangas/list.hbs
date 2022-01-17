@@ -1,0 +1,11 @@
+<h2>Mangas</h2>
+
+<ul>
+  {{#each mangas}}
+    <li>
+          {{ this.name }} by {{this.category}} {{this.episodeNumber}}
+          <img src="{{this.cover}}" alt="{{this.name}}">
+          <a href="/mangas/{{this._id}}">Read more</a>
+      </li>
+  {{/each}}
+</ul>

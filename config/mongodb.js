@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/express-auth-lesson", {
+  .connect("mongodb://127.0.0.1/manga-project", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

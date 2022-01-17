@@ -62,10 +62,12 @@ app.use(require("./middlewares/exposeLoginStatus"));
 
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
+const mangaRouter = require('./routes/manga.routes');
 
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use('/', mangaRouter)
 
 
 // catch 404 and forward to error handler

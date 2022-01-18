@@ -1,6 +1,6 @@
 require("./../config/mongodb");
 
-const Mangas = require("./../model/Manga");
+const Mangas = require("../model/Manga");
 const userModel = require("./../model/User");
 
 const mangas = [

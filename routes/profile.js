@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../model/User");
+const User = require("../model/User");  
 const Manga = require("../model/Manga");
 const uploader = require("../config/cloudinary");
 const protectRoute = require("../middlewares/protectRoute");
@@ -23,19 +23,23 @@ router.get("/profile", protectRoute, function (req, res) {
 
 });
 
-router.get("/profile/manga-create", (req, res) => {
+router.get("/profile/manga-create", protectRoute, (req, res) => {
   res.render("profile/create.hbs")
 });
 
-router.post("/profile/manga-create", uploader.single("cover"), (req, res) => {
-  const newManga = { ...req.body };
+router.post("/profile/manga-create", protectRoute, uploader.single("cover"), (req, res) => {
   console.log(req.body)
+  const newManga = { ...req.body };
+
+  if (!req.file) newManga.cover = undefined;
+  else newManga.cover = req.file.path;
+
   newManga.author = req.session.currentUser._id
   Manga.create(newManga);
   res.redirect("/profile")
 });
 
-router.get('/profile/delete/:id', (req,res) => {
+router.get('/profile/delete/:id', protectRoute, (req,res) => {
 Manga.findByIdAndDelete(req.params.id)
 .then((dbRes) => {
     console.log(dbRes);
@@ -47,7 +51,7 @@ Manga.findByIdAndDelete(req.params.id)
 });
 
 
-router.get('/profile/update/:id', async(req,res,next)=>{
+router.get('/profile/update/:id', protectRoute, async(req,res,next)=>{
 try{
    const dbResp = await Manga.findById(req.params.id);
    res.render('profile/mangaUpdate', {manga : dbResp})
@@ -56,7 +60,7 @@ try{
 }
 })
 
-router.post("/profile/update/:id", async(req,res,next)=>{
+router.post("/profile/update/:id", protectRoute, async(req,res,next)=>{
 try{
     await Manga.findByIdAndUpdate(req.params.id, req.body, {new:true});
     res.redirect('/profile')

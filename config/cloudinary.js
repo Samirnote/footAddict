@@ -11,14 +11,9 @@ cloudinary.config({
 
 // cloudinary : SAAS platform : specialized in images hosting (tools : metadata, image analyzing ...)
 const storage = new CloudinaryStorage({
-  cloudinary,
-  params: {
-    allowed_formats: ['jpg', "jpeg", 'png', "gif"],
-    folder: 'cohort-2911' // The name of the folder in cloudinary
-    // resource_type: 'raw' => this is in case you want to upload other type of files, not just images
-  }
+  cloudinary: cloudinary
 });
 
-const fileUploader = multer({ storage });
+
 // a middleware designed to parse file from requests and associate to req.file
-module.exports = fileUploader;
+module.exports = multer({storage})

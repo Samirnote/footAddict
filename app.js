@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 require("./config/mongodb");
 
 const createError = require("http-errors");
@@ -62,7 +64,7 @@ app.use(require("./middlewares/exposeLoginStatus"));
 
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
-const mangaRouter = require('./routes/manga.routes');
+const mangaRouter = require('./routes/manga');
 const profileRouter = require('./routes/profile');
 
 

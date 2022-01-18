@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www -e .js,.hbs"
+    "dev": "nodemon ./bin/www -e .js,.hbs",
+    "seed:users": "node ./seeds/users.seeds.js",
+    "seed:mangas": "node ./seeds/mangas.seeds.js",
+    "seed:all": "npm run seed:users && npm run seed:mangas"
   },
   "dependencies": {
     "axios": "^0.24.0",

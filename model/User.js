@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // // planing how the hacker document should like like, before database insertion
+// Je peux avoir une clef comments: [{type:ObjectId, ref: "comments"}]
+
+// Sinon user n'a aucune reference
 const userSchema = new Schema({
 	name: String,
 	lastname: String,

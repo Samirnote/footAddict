@@ -5,6 +5,8 @@
     <li>
           {{ this.name }} 
           <br>
+          {{this.author.name}} 
+          <br>
           {{this.category}} 
           <br>
           {{this.episodeNumber}}
@@ -12,12 +14,7 @@
           <img src="{{this.cover}}" alt="{{this.name}}">
           <br>
           <a href="/mangas/{{this._id}}">Read more</a>
-          <a href="/delete/{{this._id}}">
-                Delete
-            </a>
-            <a href="/update/{{this._id}}">
-                Update
-            </a>
+          
       </li>
   {{/each}}
 </ul>

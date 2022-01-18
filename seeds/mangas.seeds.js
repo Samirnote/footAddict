@@ -1,6 +1,7 @@
 require("./../config/mongodb");
 
 const Mangas = require("./../model/Manga");
+const userModel = require("./../model/User");
 
 const mangas = [
 	{
@@ -32,7 +33,14 @@ const mangas = [
 (async function () {
 	try {
 		await Mangas.deleteMany();
-		const createdMangas = await Mangas.create(mangas);
+		const users = await userModel.find();
+		const mod = mangas.map(m => {
+			const len = users.length - 1;
+			const rand = Math.floor(Math.random() * (len - 0) + 0);
+			m.author = users[rand]._id;
+			return m;
+		})
+		const createdMangas = await Mangas.create(mod);
 		console.log(`Just created ${createdMangas.length} 🦆`);
 		process.exit();
 	} catch (err) {

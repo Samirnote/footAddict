@@ -1,14 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const protectRoute = require("./../middlewares/protectRoute");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express Authentication" });
-});
-
-router.get("/profile", protectRoute, function (req, res) {
-  res.render("profile");
+  res.render("index", { title: "Manga Addict" });
 });
 
 module.exports = router;

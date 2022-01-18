@@ -1,4 +1,4 @@
-<form action="/update/{{manga._id}}" method="post">
+<form action="/profile/update/{{manga._id}}" method="post">
 
     <label for="name">the name : </label>
     <input type="text" name="name" id="name" value="{{manga.name}}" required>
@@ -18,8 +18,8 @@
     <label for="episodeNumber">Episode number :</label>
 	<input type="number" id="episodeNumber" name="episodeNumber" value="{{manga.episodeNumber}}"/>
 
-    <label for="description">escription : </label>
-    <input type="text" name="description" id="description" value="{{manga.description}}">
+    <label for="description">description : </label>
+    <textarea name="description" id="description" cols="30" rows="10" value="{{manga.description}}"></textarea>
 
     <label for="cover">the picture : </label>
     <input type="file" name="cover" id="cover" value="{{manga.cover}}">

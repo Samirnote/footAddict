@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../model/User");  
 const Manga = require("../model/Manga");
+const Comment = require("../model/Comment");
 const uploader = require("../config/cloudinary");
 const protectRoute = require("../middlewares/protectRoute");
 
@@ -39,15 +40,15 @@ router.post("/profile/manga-create", protectRoute, uploader.single("cover"), (re
   res.redirect("/profile")
 });
 
-router.get('/profile/delete/:id', protectRoute, (req,res) => {
-Manga.findByIdAndDelete(req.params.id)
-.then((dbRes) => {
-    console.log(dbRes);
+router.get('/profile/delete/:id', protectRoute, async (req,res) => {
+try{
+   await Manga.findByIdAndDelete(req.params.id)
+   await Comment.deleteMany({manga:req.params.id})
     res.redirect('/profile');
-})
-.catch((err) => {
+
+}catch(err) {
     console.log(err);
-})
+}
 });
 
 

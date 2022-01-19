@@ -20,9 +20,13 @@
             {{#each comments}}
   <li>
               {{this.content}}
-{{this.author.name}}
+              {{this.author.name}}
+              <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/delete">delete</a>
+              <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/update">Update</a>
+
   </li>
              {{/each}}
             </ul>
+            
            </div>
    

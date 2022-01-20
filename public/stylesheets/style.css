@@ -27,7 +27,7 @@ header {
   position: fixed;
   left: 0;
   right: 0;
-  top:8vh;
+  top:7vh;
   bottom: 0;
   z-index: -1;
 }
@@ -56,7 +56,7 @@ section {
   padding: 100px 200px;
 }
 
-#signin, #sinup {
+#signin, #signup, #detail-comment {
   padding:12vh 32vw;
 }
 
@@ -92,15 +92,15 @@ h3 {
 }
 
 h4 {
-	font-size: 2.2rem;
-}
-
-h5 {
 	font-size: 2rem;
 }
 
+h5 {
+	font-size: 1.7rem;
+}
+
 h6 {
-	font-size: 1.15rem;
+	font-size: 1rem;
 }
 
 .title {
@@ -120,13 +120,17 @@ h6 {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.2rem;
   background-color: #fff;
-  width: 21.25em;
+  width: 16.25em;
   box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
   border-radius: 10px;
-  padding: 25px;
+  padding: 5px;
   margin: 15px;
-  transition: 0.7s ease;
+  transition: 0.5s ease;
 }
 
 .card:hover {
@@ -141,8 +145,8 @@ h6 {
 }
 
 .photo img {
-  overflow:hidden;
-  width:100%;
+  max-width:240px;
+  max-height:400px;
 }
 
 .info {
@@ -151,11 +155,27 @@ h6 {
 
 .info h3{
   color: #3a6cf4;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  margin: 10px;
+  margin: 5px;
 }
 
 .not-yet {
   margin-top:0.8rem;
 }
+
+.fa-plus-square{
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+#detail-content{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+}
+
+

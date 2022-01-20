@@ -24,8 +24,10 @@ router.get("/mangas", protectRoute, (req, res, next) => {
 
 router.get("/mangas/:id", protectRoute, async (req, res) => {
   try {
-    const detail = await Manga.findById(req.params.id);
-    const comments = await Comment.find({ manga: req.params.id }).populate("author");
+    const detail = await Manga.findById(req.params.id).populate("author");
+    const comments = await Comment.find({ manga: req.params.id }).populate(
+      "author"
+    );
     res.render("mangas/details.hbs", { manga: detail, comments: comments });
   } catch (er) {
     console.error(er);
@@ -47,33 +49,45 @@ router.post("/mangas/:id", async (req, res) => {
   }
 });
 
-router.get("/mangas/:idManga/comment/:idComment/delete", protectRoute, async (req, res) => {
-  
-  try {
-    await Comment.findByIdAndDelete(req.params.idComment);
-    res.redirect(`/mangas/${req.params.idManga}`);
-  } catch (er) {
-    console.error(er);
+router.get(
+  "/mangas/:idManga/comment/:idComment/delete",
+  protectRoute,
+  async (req, res) => {
+    try {
+      await Comment.findByIdAndDelete(req.params.idComment);
+      res.redirect(`/mangas/${req.params.idManga}`);
+    } catch (er) {
+      console.error(er);
+    }
   }
-});
+);
 
-router.get("/mangas/:idManga/comment/:idComment/update", protectRoute, async (req, res) => {
-  try {
-    const commentToUpdate = await Comment.findById(req.params.idComment);
-    res.render("mangas/updatComment.hbs", { commentToUpdate });
-  } catch (er) {
-    console.error(er);
+router.get(
+  "/mangas/:idManga/comment/:idComment/update",
+  protectRoute,
+  async (req, res) => {
+    try {
+      const commentToUpdate = await Comment.findById(req.params.idComment);
+      res.render("mangas/updatComment.hbs", { commentToUpdate });
+    } catch (er) {
+      console.error(er);
+    }
   }
-});
+);
 
-router.post("/mangas/:idManga/comment/:idComment/update", protectRoute, async (req, res) => {
-  
-  try {
-    await Comment.findByIdAndUpdate(req.params.idComment, req.body, { new: true });
-    res.redirect(`/mangas/${req.params.idManga}`);
-  } catch (er) {
-    console.error(er);
+router.post(
+  "/mangas/:idManga/comment/:idComment/update",
+  protectRoute,
+  async (req, res) => {
+    try {
+      await Comment.findByIdAndUpdate(req.params.idComment, req.body, {
+        new: true,
+      });
+      res.redirect(`/mangas/${req.params.idManga}`);
+    } catch (er) {
+      console.error(er);
+    }
   }
-});
+);
 
 module.exports = router;

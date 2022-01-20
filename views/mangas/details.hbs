@@ -1,34 +1,47 @@
-<section >
-<h2>{{ manga.name }} </h2>
+<section>
+  <h2 class="title">{{ manga.name }} </h2>
 
-<img src="{{manga.cover}}" alt="{{manga.name}}">
-            <br>
-          {{manga.category}} 
-          <br>
-          {{manga.episodeNumber}}
-          <br>
-          {{manga.description}}
-          
-          
+  <div id="detail-content">
+  
+    <div class="card">
+        <div class="photo">
+          <img src="{{manga.cover}}" alt="{{manga.name}}">
+        </div>       
+    </div>
+    <div class="info">
+                   
+        <h6>Category : {{manga.category}}</h6>
+                   
+        <h6>Added by : {{manga.author.name}}</h6>
+                  
+        <h6>Total episodes number : {{manga.episodeNumber}}</h6>
+
+        <h6>Description : {{manga.description}}</h6>
+
+                  
+    </div>
+    
+  </div>
+  <div class="detail-comment" id="detail-comment">
+  <div>     
           <h4>Leave a comment</h4>
           <form  action="/mangas/{{manga._id}}" method="post">
-          <textarea name="content" id="content" cols="30" rows="10"></textarea>
+          <textarea name="content" id="content" cols="25" rows="5"></textarea>
           <button>Comment it</button>
           </form>
-
-<div>
-  <ul>
+  </div>
+  <div>
     {{#each comments}}
-    <li>
+    
       {{this.content}}
       {{this.author.name}}
       {{#compare ../currentUser._id this.author._id operator="==" }}
       <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a>
       <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/update"><i class="fas fa-pencil-alt"></i></a>
       {{/compare}}
-    </li>
+    
     {{/each}}
-  </ul>
-</div>
-   
+  
+  </div>
+  </div>
 </section>

@@ -1,28 +1,30 @@
 <section>
-  
-<h1>My mangas list</h1>
-<br>
-<a href="/dashboard/manga-create">Add Manga</a>
-
-<ul>
+<div class='list-special'>
+  <h2 class="title" >My mangas list</h2>
+  <a href="/dashboard/manga-create">
+  <i class="far fa-plus-square"></i>
+  </a>
+</div>
+<div class="content">
   {{#each mangas}}
-    <li>
-          {{ this.name }} 
-          <br>
-          {{this.category}} 
-          <br>
-          {{this.episodeNumber}}
-          <br>
+    <div class="card">
+        <div class="photo">
           <img src="{{this.cover}}" alt="{{this.name}}">
-          <br>
-          <span>|</span>
-          <a href="/dashboard/delete/{{this._id}}">Delete</a>
-          <span>|</span>
-          <a href="/dashboard/update/{{this._id}}">Update</a>
-          <span>|</span>
-
-      </li>
+        </div>
+              <div class="info">
+                <h3>{{ this.name }}</h3>
+                   
+                <h6>{{this.category}}</h6>
+                   
+                    <h6>{{this.author.name}}</h4>
+                  
+                    <h6>{{this.episodeNumber}} Episodes</h4>
+                  
+                     <a href="/dashboard/delete/{{this._id}}"><i class="fas fa-trash-alt"></i></a>
+                     <a href="/dashboard/update/{{this._id}}"><i class="fas fa-pencil-alt"></i></a>
+                </div>
+    </div>
+    
   {{/each}}
-</ul>
-
+</div>
 </section>

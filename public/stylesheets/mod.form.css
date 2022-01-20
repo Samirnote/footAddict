@@ -1,14 +1,14 @@
-.form {
+section form {
   display: flex;
   flex-direction: column;
   max-width: 748px;
 }
 
-.form.row {
+section form.row {
   flex-direction: row;
 }
 
-.form .input {
+section form input {
   height: 32px;
   margin-bottom: 20px;
   border: 1px solid;
@@ -16,16 +16,13 @@
   padding: 5px 0 5px 20px;
 }
 
-.form .icon {
-  margin-bottom: 20px;
-}
 
-.form .label {
+section form label {
   cursor: pointer;
   margin-bottom: 10px;
 }
 
-.form .btn {
+section form button {
   height: 32px;
   max-width: 120px;
   display: flex;
@@ -38,7 +35,7 @@
   border-radius: .3rem;
 }
 
-.form .btn:hover {
+section form button:hover {
   background: whitesmoke;
   color: black;
   border: 1px solid;

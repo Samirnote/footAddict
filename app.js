@@ -65,13 +65,15 @@ app.use(require("./middlewares/exposeLoginStatus"));
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const mangaRouter = require('./routes/manga');
+const dashboardRouter = require('./routes/dashboard');
 const profileRouter = require('./routes/profile');
 
 
 app.use("/", indexRouter);
+app.use("/", profileRouter);
 app.use("/auth", authRouter);
 app.use('/', mangaRouter)
-app.use('/', profileRouter)
+app.use('/', dashboardRouter)
 
 
 // catch 404 and forward to error handler

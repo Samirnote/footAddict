@@ -1,20 +1,25 @@
-<h2>Mangas</h2>
+<section class="cards" id="services" >
+<h2 class="title">All  Mangas</h2>
 
-<ul>
+<div class="content">
   {{#each mangas}}
-    <li>
-          {{ this.name }} 
-          <br>
-          {{this.author.name}} 
-          <br>
-          {{this.category}} 
-          <br>
-          {{this.episodeNumber}}
-          <br>
+    <div class="card">
+        <div class="icon">
           <img src="{{this.cover}}" alt="{{this.name}}">
-          <br>
-          <a href="/mangas/{{this._id}}">Read more</a>
-          
-      </li>
+        </div>
+                <div class="info">
+                    <h3>{{ this.name }}</h3>
+                    <br>
+                    <h4>{{this.category}}</h4>
+                    <br>
+                    <h6>{{this.author.name}}</h4>
+                    <br>
+                    <h6>{{this.episodeNumber}} Episodes</h4>
+                    <br>
+                    <a href="/mangas/{{this._id}}">Read more</a>
+                </div>
+    </div>
+    
   {{/each}}
-</ul>
+</div>
+</section>

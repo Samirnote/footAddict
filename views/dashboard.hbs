@@ -1,0 +1,28 @@
+<section>
+  
+<h1>My mangas list</h1>
+<br>
+<a href="/dashboard/manga-create">Add Manga</a>
+
+<ul>
+  {{#each mangas}}
+    <li>
+          {{ this.name }} 
+          <br>
+          {{this.category}} 
+          <br>
+          {{this.episodeNumber}}
+          <br>
+          <img src="{{this.cover}}" alt="{{this.name}}">
+          <br>
+          <span>|</span>
+          <a href="/dashboard/delete/{{this._id}}">Delete</a>
+          <span>|</span>
+          <a href="/dashboard/update/{{this._id}}">Update</a>
+          <span>|</span>
+
+      </li>
+  {{/each}}
+</ul>
+
+</section>

@@ -19,6 +19,18 @@ header {
   padding: 10px 200px ;
 }
 
+/* video background */
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:8vh;
+  bottom: 0;
+  z-index: -1;
+}
 
 .logo{
   text-decoration: none;
@@ -44,30 +56,52 @@ section {
   padding: 100px 200px;
 }
 
+#signin, #sinup {
+  padding:12vh 32vw;
+}
+
+
 h1 {
 	font-size: 70px;
+  
+}
+
+h1#home-title  {
+  color:#ddd;
+  position :relative;
+  top:30vh;
+  left:10vw;
+  font-size:5rem;
 }
 
 h2 {
 	font-size: 36px;
 }
 
+#home-subtitle {
+  color:white;
+  font-size:2.5rem;
+  position :relative;
+  top:35vh;
+  left:10vw;
+  font-weight:light;
+}
+
 h3 {
-	font-size: 30px;
+	font-size: 2.5rem;
 }
 
 h4 {
-	font-size: 24px;
+	font-size: 2.2rem;
 }
 
 h5 {
-	font-size: 18px;
+	font-size: 2rem;
 }
 
 h6 {
-	font-size: 16px;
+	font-size: 1.15rem;
 }
-
 
 .title {
   display: flex;
@@ -99,11 +133,16 @@ h6 {
   transform: scale(1.1);
 }
 
-.card .icon {
+.card .photo {
   width: 100%;
   color: #3a6cf4;
   font-size: 1em;
   text-align: center;
+}
+
+.photo img {
+  overflow:hidden;
+  width:100%;
 }
 
 .info {
@@ -112,7 +151,11 @@ h6 {
 
 .info h3{
   color: #3a6cf4;
-  font-size: 04em;
-  font-weight: 300;
+  font-size: 2.5rem;
+  font-weight: 500;
   margin: 10px;
+}
+
+.not-yet {
+  margin-top:0.8rem;
 }

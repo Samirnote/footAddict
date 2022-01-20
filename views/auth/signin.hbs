@@ -1,15 +1,15 @@
-<section>
-<form method="post" action="/auth/signin" class="form">
-    {{> flashMessage }}
+<section id="signin">
+    <form  method="post" action="/auth/signin" class="form">
+        {{> flashMessage }}
 
-    <label for="email">email</label>
-    <input class="input" type="email" id="email" name="email" value="sam@email.com">
-    <label for="password">password</label>
-    <input class="input" type="password" id="password" name="password" value="1234">
-    <button class="btn">signin</button>
-</form>
-<p>
-    Don't have an account yet ? <a href="/auth/signup">signup</a>
-</p>
+        <label for="email">Email</label>
+        <input class="input" type="email" id="email" name="email" value="sam@email.com">
+        <label for="password">Password</label>
+        <input class="input" type="password" id="password" name="password" value="1234">
+        <button class="btn">Signin</button>
+    </form>
+    <p class="not-yet">
+        Don't have an account yet ? <a href="/auth/signup">Signup</a>
+    </p>
 
 </section>

@@ -67,6 +67,7 @@ const authRouter = require("./routes/auth");
 const mangaRouter = require('./routes/manga');
 const dashboardRouter = require('./routes/dashboard');
 const profileRouter = require('./routes/profile');
+require('./helpers/hbs');
 
 
 app.use("/", indexRouter);

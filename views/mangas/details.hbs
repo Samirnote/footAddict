@@ -16,20 +16,19 @@
           <button>Comment it</button>
           </form>
 
-          <div>
-            <ul>
-            {{#each comments}}
-  <li>
-              {{this.content}}
-              {{this.author.name}}
-              {{!-- {{# if req.session.currentUser.id === this.author.id}} --}}
-              <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a>
-              <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/update"><i class="fas fa-pen"></i></a>
-              {{!-- {{ if}} --}}
-  </li>
-             {{/each}}
-            </ul>
-            
-           </div>
+<div>
+  <ul>
+    {{#each comments}}
+    <li>
+      {{this.content}}
+      {{this.author.name}}
+      {{#compare ../currentUser._id this.author._id operator="==" }}
+      <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a>
+      <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/update"><i class="fas fa-pencil-alt"></i></a>
+      {{/compare}}
+    </li>
+    {{/each}}
+  </ul>
+</div>
    
 </section>

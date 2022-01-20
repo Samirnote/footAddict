@@ -25,9 +25,7 @@ router.get("/mangas", protectRoute, (req, res, next) => {
 router.get("/mangas/:id", protectRoute, async (req, res) => {
   try {
     const detail = await Manga.findById(req.params.id).populate("author");
-    const comments = await Comment.find({ manga: req.params.id }).populate(
-      "author"
-    );
+    const comments = await Comment.find({ manga: req.params.id }).populate("author");
     res.render("mangas/details.hbs", { manga: detail, comments: comments });
   } catch (er) {
     console.error(er);

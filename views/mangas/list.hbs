@@ -1,25 +1,20 @@
 <section>
-<h2 class="title">All  Mangas</h2>
+  <h2 class="title">All Mangas</h2>
 
-<div class="content">
-  {{#each mangas}}
+  <div class="content">
+    {{#each mangas}}
     <div class="card">
-        <div class="photo">
-          <img src="{{this.cover}}" alt="{{this.name}}">
-        </div>
-                <div class="info">
-                    <h3>{{ this.name }}</h3>
-                   
-                    <h6>{{this.category}}</h6>
-                   
-                    <h6>{{this.author.name}}</h4>
-                  
-                    <h6>{{this.episodeNumber}} Episodes</h4>
-                  
-                    <a href="/mangas/{{this._id}}"><i class="fas fa-comments"></i></a>
-                </div>
+      <div class="photo">
+        <img src="{{this.cover}}" alt="{{this.name}}">
+      </div>
+      <div class="info">
+        <h3>{{ this.name }}</h3>
+        <h6>{{this.category}}</h6>
+        <h6>{{this.author.name}}</h4>
+          <h6>{{this.episodeNumber}} Episodes</h4>
+            <a href="/mangas/{{this._id}}"><i class="fas fa-comments"></i></a>
+      </div>
     </div>
-    
-  {{/each}}
-</div>
+    {{/each}}
+  </div>
 </section>

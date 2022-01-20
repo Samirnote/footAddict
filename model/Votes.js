@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const voteSchema = new Schema({
-	content: Number,
+    content: Number,
     author: { type: Schema.Types.ObjectId, ref: "users" },
     manga: { type: Schema.Types.ObjectId, ref: "mangas" }
 });

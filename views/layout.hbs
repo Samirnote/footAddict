@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html>
-<html lang="en"></html>
+<html lang="en">
+
+</html>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css'/>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' />
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel='stylesheet' href='/stylesheets/mod.form.css' />
   <link rel='stylesheet' href='/stylesheets/mod.message.css' />
   <title>{{title}}</title>
 </head>
+
 <body>
-<header>
-  <a href="/" class="logo">Manga Addict</a>
-  <nav id="navigation">
-    {{#unless currentUser}}
-    <a href="/auth/signup">Signup</a>
-    <a href="/auth/signin">Signin</a>
-    {{else}}
-    <a href="/mangas">List</a>
-    <a href="/dashboard">Dashboard</a>
-    <a href="/profile">Profile</a>
-    <a href="/auth/signout">Signout</a>
-    {{/unless}}
-  </nav>
-</header>
+  <header>
+    <a href="/" class="logo">Manga Addict</a>
+    <nav id="navigation">
+      {{#unless currentUser}}
+      <a href="/auth/signup">Signup</a>
+      <a href="/auth/signin">Signin</a>
+      {{else}}
+      <a href="/mangas">List</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/profile">Profile</a>
+      <a href="/auth/signout">Signout</a>
+      {{/unless}}
+    </nav>
+  </header>
   {{friendlyMessage}}
   {{{body}}}
 </body>

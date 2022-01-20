@@ -1,33 +1,35 @@
 <section>
-<form action="/dashboard/manga-create" method="POST" enctype="multipart/form-data">
+	<form action="/dashboard/manga-create" method="POST" enctype="multipart/form-data">
 
-<!---    in the post route populate the user creator is the actual user logged in => retrieve it from the session   --->
+		<!---    in the post route populate the user creator is the actual user logged in => retrieve it from the session   --->
 
-	<label for="name">Manga name :</label>
-	<input type="text" id="name" name="name" required />
+		<label for="name">Manga name :</label>
+		<input type="text" id="name" name="name" required />
 
-	<label for="category">Category: </label>
-	<select name="category" id="category">
-		<option value="Kodomo">Kodomo 子供</option>
-		<option value="Shōnen">Shōnen 少年</option>
-		<option value="Shōjo">Shōjo 少女</option>
-        <option value="Seinen">Seinen 青年</option>
-        <option value="Josei">Josei 女性</option>
-        <option value="Seijin">Seijin 成人</option>
-        <option value="Yaoi">Yaoi やおい</option>
-        <option value="Yuri">Yuri 百合</option>
-	</select>
+		<label for="category">Category: </label>
+		<select name="category" id="category">
+			<option value="Kodomo">Kodomo 子供</option>
+			<option value="Shōnen">Shōnen 少年</option>
+			<option value="Shōjo">Shōjo 少女</option>
+			<option value="Seinen">Seinen 青年</option>
+			<option value="Josei">Josei 女性</option>
+			<option value="Seijin">Seijin 成人</option>
+			<option value="Yaoi">Yaoi やおい</option>
+			<option value="Yuri">Yuri 百合</option>
+		</select>
 
-	<label for="episodeNumber">Episode number :</label>
-	<input type="number" id="episodeNumber" name="episodeNumber" />
+		<label for="episodeNumber">Number of episodes :</label>
+		<input type="number" id="episodeNumber" name="episodeNumber" />
 
-	<label for="cover">Cover :</label><!--- would be an upload file field ? multiform attribute to the form and cloudinary installation  --->
-	<input type="file" id="cover" name="cover" />
+		<label for="cover">Cover :</label>
+		<!--- would be an upload file field ? multiform attribute to the form and cloudinary installation  --->
+		<input type="file" id="cover" name="cover" />
 
-	<label for="description">Description :</label><!--- would be an upload file field ? multiform attribute to the form and cloudinary installation  --->
-	<input type="text" id="description" name="description" />
+		<label for="description">Description :</label>
+		<!--- would be an upload file field ? multiform attribute to the form and cloudinary installation  --->
+		<input type="text" id="description" name="description" />
 
-	<button>Add</button>
+		<button>Add</button>
 
-</form>
+	</form>
 </section>

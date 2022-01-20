@@ -56,10 +56,13 @@ section {
   padding: 100px 200px;
 }
 
-#signin, #signup, #detail-comment {
+#signin, #signup, #update-manga {
   padding:12vh 32vw;
 }
 
+#detail-comment  {
+  width: 100%;
+}
 
 h1 {
 	font-size: 70px;
@@ -122,15 +125,38 @@ h6 {
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 0.2rem;
   background-color: #fff;
   width: 16.25em;
+  height:35rem;
   box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
   border-radius: 10px;
-  padding: 5px;
-  margin: 15px;
+  padding: 1rem;
+  margin: 1rem;
   transition: 0.5s ease;
+}
+
+#detail-content-card  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width:55vw;
+  height:22rem;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  transition: 0.5s ease;
+}
+
+#detail-content-card img  {
+  height:100%
+}
+
+#detail-content{
+  display: flex;
+  justify-content: space-around;
 }
 
 .card:hover {
@@ -139,18 +165,29 @@ h6 {
 
 .card .photo {
   width: 100%;
-  color: #3a6cf4;
-  font-size: 1em;
   text-align: center;
+ }
+
+.photo  {
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
 }
 
 .photo img {
-  max-width:240px;
-  max-height:400px;
+  object-fit: cover;
+  max-height:20rem;
 }
 
 .info {
-  text-align: center;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  align-items: left;
+  gap:.5rem;
+  padding-bottom:.5rem
 }
 
 .info h3{
@@ -158,6 +195,14 @@ h6 {
   font-size: 1.5rem;
   font-weight: 500;
   margin: 5px;
+}
+
+#update-delete {
+  margin-top:1rem;
+  width:100%;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
 }
 
 .not-yet {
@@ -170,12 +215,6 @@ h6 {
   justify-content: center;
 }
 
-#detail-content{
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  flex-wrap: nowrap;
-
+a {
+  text-decoration:none;
 }
-
-

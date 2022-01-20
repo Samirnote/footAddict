@@ -1,14 +1,10 @@
 <section>
 <h4>Update this comment</h4>
 <form action="/mangas/{{commentToUpdate.manga}}/comment/{{commentToUpdate._id}}/update" method="post">
-
-  <textarea
-    name="content"
-    id="content"
-    cols="10"
-    rows="4"
-  >{{commentToUpdate.content}}</textarea>
+<label for="content">please update your comment</label>
+  <textarea name="content" id="content" cols="10" rows="4">
+    {{commentToUpdate.content}}
+    </textarea>
   <button>Update it</button>
 </form>
-
 </section>

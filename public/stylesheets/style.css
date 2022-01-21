@@ -305,37 +305,3 @@ a {
   margin: 1rem;
   transition: 0.5s ease;
 }
-
-
-/* ............ */
-.manga-categories{
-  width: 60%;
-  margin: 1rem auto;
-  padding: 2rem;
-  text-align: justify;
-  transition: all 0.3s;
-}
-.manga-categories p{
-  line-height: 1.5;
-  letter-spacing: 0.3px;
-  word-spacing: 2px;
-}
-
-.manga-categories p:first-child::first-letter{
-  color:#FE5F55;
-  font-weight: bold;
-  font-size: 70px;
-  float: left;
-  line-height: 60px;
-  padding-right: 8px;
-  margin-top: -3px;
-}
-
-@media screen and (max-width:600px){
-  .manga-categories{
-      width: 100%;
-      padding: 1rem;
-  }
-}
-
-

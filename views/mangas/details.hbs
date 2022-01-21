@@ -7,29 +7,32 @@
       </div>
     </div>
     <div id="detail-content-info" class="info">
-      <h6>Category : {{manga.category}}</h6>
-      <h6>Added by : {{manga.author.name}}</h6>
-      <h6>Total episodes number : {{manga.episodeNumber}}</h6>
-      <h6>Description : {{manga.description}}</h6>
+      <p><strong>Category :</strong> {{manga.category}}</p>
+      <p><strong>Added by :</strong> {{manga.author.name}}</p>
+      <p><strong>Total episodes number :</strong> {{manga.episodeNumber}}</p>
+      <p><strong>Description :</strong> {{manga.description}}</p>
     </div>
   </div>
   <div class="detail-comment" id="detail-comment">
     <div>
       <h4>Leave a comment</h4>
       <form action="/mangas/{{manga._id}}" method="post">
-        <textarea name="content" id="content" cols="25" rows="5"></textarea>
+        <textarea name="content" id="content" ></textarea>
         <button>Comment it</button>
       </form>
     </div>
-    <div>
-      {{#each comments}}
-      {{this.content}}
-      {{this.author.name}}
+    {{#each comments}}
+    <div class='comments'>
+      
+      <p id='comment-format'><strong>{{this.author.name}}</strong> : <em>{{this.content}}</em></p>
+      
+      
       {{#compare ../currentUser._id this.author._id operator="==" }}
       <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/delete"><i class="fas fa-trash-alt"></i></a>
       <a href="/mangas/{{../manga._id}}/comment/{{this._id}}/update"><i class="fas fa-pencil-alt"></i></a>
       {{/compare}}
-      {{/each}}
+      
     </div>
+    {{/each}}
   </div>
 </section>

@@ -1,10 +1,24 @@
 <section>
-    <h1>user profile</h1>
+    <h1 class='title'>My profile informations</h1>
     {{> flashMessage }}
-    <p>
-        name: {{currentUser.name}}<br>
-        lastname: {{currentUser.lastname}}<br>
-        email: {{currentUser.email}}<br>
-        role: {{currentUser.role}}<br>
-    </p>
+    <div id="detail-content-info" class="info">
+      <p><strong> Name :</strong> {{currentUser.name}}</p>
+      <p><strong>Lastname :</strong> {{currentUser.lastname}}</p>
+      <p><strong>Email :</strong> {{currentUser.email}}</p>
+      <p><strong>Role :</strong> {{currentUser.role}}</p>
+    </div>
+
+
+    <div class="manga-categories">
+        <p>
+            Sorry we didn't finish this page yet. for this i will tell you a joke.
+        </p>
+    
+        <p>
+            Did you hear about the mathematician who’s afraid of negative numbers? <br>
+                 He’ll stop at nothing to avoid them.
+        </p>
+    </div>
+
+
 </section>

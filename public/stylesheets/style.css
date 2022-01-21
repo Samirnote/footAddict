@@ -113,6 +113,7 @@ h6 {
   font-size: 2.2em;
   font-weight: 800;
   margin-bottom: 30px;
+  
 }
 
 .content {
@@ -217,4 +218,106 @@ h6 {
 
 a {
   text-decoration:none;
+}
+#comment-format{
+  color: hsl(0 0% 20%);
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin: 0;
+}
+
+.comments{
+  display : flex;
+  flex-direction:row;
+  justify-content:left;
+  gap: 1em;
+}
+
+#home-title {
+  animation-name: titleColorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes titleColorPalette {
+  0% {
+    color: #EE6055;
+  }
+  25% {
+    color: #60D394;
+  }
+  50% {
+    color: #AAF683;
+  }
+  75% {
+    color: #FFD97D;
+  }
+  100% {
+    color: #FF9B85;
+  }
+}
+#home-subtitle {
+  animation-name: subTitleColorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+@keyframes subTitleColorPalette {
+  0% {
+    color: #FF9B85;
+  }
+  25% {
+    color: #FFD97D;
+  }
+  50% {
+    color: #AAF683;
+  }
+  75% {
+    color: #60D394;
+  }
+  100% {
+    color: #EE6055;
+  }
+}
+
+#detail-content-info{
+  color: rgb(44, 11, 121);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+
+/* ............ */
+.manga-categories{
+  width: 60%;
+  margin: 1rem auto;
+  padding: 2rem;
+  text-align: justify;
+  transition: all 0.3s;
+}
+.manga-categories p{
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  word-spacing: 2px;
+}
+
+.manga-categories p:first-child::first-letter{
+  color:#FE5F55;
+  font-weight: bold;
+  font-size: 70px;
+  float: left;
+  line-height: 60px;
+  padding-right: 8px;
+  margin-top: -3px;
+}
+
+@media screen and (max-width:600px){
+  .manga-categories{
+      width: 100%;
+      padding: 1rem;
+  }
 }

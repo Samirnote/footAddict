@@ -56,7 +56,7 @@ section {
   padding: 100px 200px;
 }
 
-#signin, #signup, #update-manga {
+#signin, #signup, #update-manga, #manga-create {
   padding:12vh 32vw;
 }
 
@@ -72,9 +72,10 @@ h1 {
 h1#home-title  {
   color:#ddd;
   position :relative;
-  top:30vh;
-  left:10vw;
-  font-size:5rem;
+  top:46vh;
+  right:3vw;
+  text-align:right;
+  font-size:4rem;
 }
 
 h2 {
@@ -83,11 +84,12 @@ h2 {
 
 #home-subtitle {
   color:white;
-  font-size:2.5rem;
+  font-size:1.8rem;
   position :relative;
-  top:35vh;
-  left:10vw;
-  font-weight:light;
+  top:48vh;
+  text-align:right;
+  right:3vw;
+  font-weight:normal;
 }
 
 h3 {
@@ -322,20 +324,4 @@ a {
   }
 }
 
-h1#home-title  {
-  color:#ddd;
-  position :relative;
-  top:46vh;
-  right:3vw;
-  text-align:right;
-  font-size:4rem;
-}
-#home-subtitle {
-  color:white;
-  font-size:1.8rem;
-  position :relative;
-  top:48vh;
-  text-align:right;
-  right:3vw;
-  font-weight:normal;
-}
+

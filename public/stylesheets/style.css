@@ -321,3 +321,21 @@ a {
       padding: 1rem;
   }
 }
+
+h1#home-title  {
+  color:#ddd;
+  position :relative;
+  top:46vh;
+  right:3vw;
+  text-align:right;
+  font-size:4rem;
+}
+#home-subtitle {
+  color:white;
+  font-size:1.8rem;
+  position :relative;
+  top:48vh;
+  text-align:right;
+  right:3vw;
+  font-weight:normal;
+}

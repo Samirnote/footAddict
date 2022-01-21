@@ -1,1 +1,1 @@
-# footAddict
+# mangaAddict

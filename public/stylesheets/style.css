@@ -3,7 +3,6 @@
 *{
   font-family: 'Poppins', sans-serif;
   margin : 0;
-  padding : 0;
   box-sizing: border-box;
   scroll-behavior : smooth;
 }
@@ -16,7 +15,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 200px ;
+  padding: 7px 32px;
+ 
 }
 
 /* video background */
@@ -53,11 +53,13 @@ header {
 }
 
 section {
-  padding: 100px 200px;
+ margin : 0 auto;
 }
 
 #signin, #signup, #update-manga, #manga-create, .profile-content-info {
-  padding:12vh 32vw;
+  padding: 21px 32px 40px;
+  position: relative;
+  top: 57px;
 }
 
 #detail-comment  {
@@ -302,6 +304,6 @@ a {
   box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
   border-radius: 10px;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem auto;
   transition: 0.5s ease;
 }

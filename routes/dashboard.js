@@ -37,6 +37,7 @@ router.post("/dashboard/manga-create", protectRoute, uploader.single("cover"), (
 
   newManga.author = req.session.currentUser._id
   Manga.create(newManga);
+  req.flash("success", "Your Manga have been successfully created !");
   res.redirect("/dashboard")
 });
 
@@ -64,6 +65,7 @@ router.get('/dashboard/update/:id', protectRoute, async (req, res, next) => {
 router.post("/dashboard/update/:id", protectRoute, async (req, res, next) => {
   try {
     await Manga.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    req.flash("success", "Your Manga have been successfully updated !");
     res.redirect('/dashboard')
   } catch (err) {
     console.error(err);

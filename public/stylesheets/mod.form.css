@@ -1,7 +1,7 @@
 section form {
   display: flex;
   flex-direction: column;
-  max-width: 748px;
+  max-width: 30vw;;
 }
 
 section form.row {
@@ -15,7 +15,6 @@ section form input {
   border-radius: .3rem;
   padding: 5px 0 5px 20px;
 }
-
 
 section form label {
   cursor: pointer;
@@ -33,6 +32,7 @@ section form button {
   cursor: pointer;
   border: none;
   border-radius: .3rem;
+  margin-top:0.5rem
 }
 
 section form button:hover {

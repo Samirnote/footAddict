@@ -40,6 +40,7 @@ router.post("/mangas/:id", async (req, res) => {
   };
   try {
     await Comment.create(newComment);
+    req.flash("success", "Your Comment have successfully been posted !");
     res.redirect("/mangas/" + req.params.id);
   } catch (error) {
     req.flash("there was an error during the saving of your comment");
@@ -81,6 +82,7 @@ router.post(
       await Comment.findByIdAndUpdate(req.params.idComment, req.body, {
         new: true,
       });
+      req.flash("success", "Your Manga have been successfully updated !");
       res.redirect(`/mangas/${req.params.idManga}`);
     } catch (er) {
       console.error(er);

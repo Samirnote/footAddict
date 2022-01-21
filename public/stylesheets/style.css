@@ -53,13 +53,13 @@ header {
 }
 
 section {
- margin : 0 auto;
+  margin : 0 auto;
+  position: relative;
+  top: 75px;
 }
 
-#signin, #signup, #update-manga, #manga-create, .profile-content-info {
-  padding: 21px 32px 40px;
-  position: relative;
-  top: 57px;
+#signin, #signup, #update-manga, #manga-create, .profile-content-info, #update-comment, #detail-section {
+  max-width:80vw;
 }
 
 #detail-comment  {
@@ -121,6 +121,7 @@ h6 {
 }
 
 .content {
+  margin-top:15px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -142,6 +143,35 @@ h6 {
   transition: 0.5s ease;
 }
 
+#detail-section{
+  display: flex;
+  flex-direction: column;
+}
+
+#detail-content {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#detail-content-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.2rem;
+  background-color: #fff;
+  width: 25em;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem auto;
+  transition: 0.5s ease;
+  color: rgb(44, 11, 121);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
 #detail-content-card  {
   display: flex;
   flex-direction: column;
@@ -157,11 +187,6 @@ h6 {
 
 #detail-content-card img  {
   height:100%
-}
-
-#detail-content{
-  display: flex;
-  justify-content: space-around;
 }
 
 .card:hover {
@@ -287,23 +312,7 @@ a {
   }
 }
 
-#detail-content-info{
-  color: rgb(44, 11, 121);
-  font-size: 1.3rem;
-  line-height: 1.5;
-  font-weight: 300;
-}
-
-#detail-content-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 0.2rem;
-  background-color: #fff;
-  width: 25em;
-  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 1rem auto;
-  transition: 0.5s ease;
+#update-comment {
+  display:flex;
+  flex-direction:column;
 }

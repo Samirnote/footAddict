@@ -62,12 +62,19 @@ router.get('/dashboard/update/:id', protectRoute, async (req, res, next) => {
   }
 })
 
-router.post("/dashboard/update/:id", protectRoute, async (req, res, next) => {
+router.post("/dashboard/update/:id", protectRoute, uploader.single("cover"), async (req, res, next) => {
+  
   try {
-    await Manga.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const oldMangaVersion = await Manga.findById(req.params.id);
+    //console.log("oldMangaVersion.cover", oldMangaVersion.cover);
+    const updatedManga = { ...req.body };
+    if (!req.file) updatedManga.cover = oldMangaVersion.cover;
+    else updatedManga.cover = req.file.path;
+    //console.log("req", req);
+    await Manga.findByIdAndUpdate(req.params.id, updatedManga, { new: true });
     req.flash("success", "Your Manga have been successfully updated !");
     res.redirect('/dashboard')
-  } catch (err) {
+  }  catch (err) {
     console.error(err);
   }
 })

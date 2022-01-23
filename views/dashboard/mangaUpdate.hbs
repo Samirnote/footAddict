@@ -1,5 +1,5 @@
 <section id="update-manga">
-    <form action="/dashboard/update/{{manga._id}}" method="post">
+    <form action="/dashboard/update/{{manga._id}}" method="post"  enctype="multipart/form-data">
         <label for="name">Update Manga name</label>
         <input type="text" name="name" id="name" value="{{manga.name}}" required>
         <select name="category" id="category" value="{{manga.category}}">
@@ -15,9 +15,9 @@
         <label for="episodeNumber">Update the number of episodes</label>
         <input type="number" id="episodeNumber" name="episodeNumber" value="{{manga.episodeNumber}}" />
         <label for="description">Change description </label>
-        <input type="text" name="description" id="description" value="{{manga.description}}"></input>
+        <input type="text" name="description" id="description" value="{{manga.description}}"/>
         <label for="cover">Chang the cover </label>
-        <input type="file" name="cover" id="cover" value="{{manga.cover}}"></input>
+        <input type="file" name="cover" id="cover" value="{{manga.cover}}"/>
         <button>Modify</button>
 
     </form>
